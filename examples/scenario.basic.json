@@ -1,0 +1,29 @@
+{
+  "name": "basic backend smoke",
+  "steps": [
+    {
+      "name": "health",
+      "method": "GET",
+      "path": "/health",
+      "expect_status": 200,
+      "contains": "ok"
+    },
+    {
+      "name": "login",
+      "method": "POST",
+      "path": "/v1/auth/login",
+      "content_type": "application/json",
+      "body": "{\"email\":\"${WASD_EMAIL}\",\"password\":\"${WASD_PASSWORD}\"}",
+      "expect_status": 200,
+      "save_json": "$.data.access_token",
+      "save_as": "token"
+    },
+    {
+      "name": "profile",
+      "method": "GET",
+      "path": "/v1/profile",
+      "auth": true,
+      "expect_status": 200
+    }
+  ]
+}

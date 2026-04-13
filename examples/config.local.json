@@ -1,0 +1,16 @@
+{
+  "base_url": "http://localhost:8080",
+  "timeout_seconds": 15,
+  "headers": {
+    "X-Game-Client": "wasd-toolkit"
+  },
+  "auth": {
+    "path": "/v1/auth/login",
+    "method": "POST",
+    "payload": {
+      "email": "${WASD_EMAIL}",
+      "password": "${WASD_PASSWORD}"
+    },
+    "token_json_path": "$.data.access_token"
+  }
+}
