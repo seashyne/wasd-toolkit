@@ -153,11 +153,3 @@ go run ./cmd/wasd-toolkit load \
   ]
 }
 ```
-
-## แนะนำให้ต่อยอดเพิ่ม
-
-- assertion แบบ JSON path เทียบค่า
-- รองรับ multipart upload
-- export JUnit / HTML report เพื่อใช้ใน CI
-- preset สำหรับ service สำคัญ เช่น auth, player, inventory, mail, gacha
-- seed/reset test data endpoint สำหรับ staging
