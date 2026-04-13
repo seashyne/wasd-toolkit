@@ -18,7 +18,6 @@ cmd/wasd-toolkit/main.go      # entrypoint CLI
 internal/toolkit/toolkit.go   # config/client/scenario/load logic
 examples/config.local.json    # ตัวอย่าง config
 examples/scenario.basic.json  # ตัวอย่าง scenario
-scripts/push-github.sh        # helper สำหรับ push ขึ้น GitHub
 ```
 
 ## เริ่มใช้งาน
@@ -162,22 +161,3 @@ go run ./cmd/wasd-toolkit load \
 - export JUnit / HTML report เพื่อใช้ใน CI
 - preset สำหรับ service สำคัญ เช่น auth, player, inventory, mail, gacha
 - seed/reset test data endpoint สำหรับ staging
-
-## Push ขึ้น GitHub
-
-```bash
-bash scripts/push-github.sh
-```
-
-หรือทำเอง:
-
-```bash
-git init
-git branch -M main
-git remote add origin https://github.com/seashyne/wasd-toolkit.git
-git add .
-git commit -m "feat: bootstrap wasd toolkit"
-git push -u origin main
-```
-
-> ถ้าใช้ HTTPS GitHub จะขอ login / personal access token ตอน push
